@@ -11,18 +11,35 @@
     A string or string array of server names
 .EXAMPLE
     Get-WebSiteBinding MY_SERVER_NAME
+
+    Description
+    -----------
+    Returns all the web site bindings for the specified server.
 .EXAMPLE
     Get-WebSiteBinding MY_SERVER_NAME1, MY_SERVER_NAME2
+
+    Description
+    -----------
+    Returns all the web site bindings for the specified servers.
 .EXAMPLE
     "MY_SERVER_NAME" | Get-WebSiteBinding
+
+    Description
+    -----------
+    Returns all the web site bindings for the specified server.
 .EXAMPLE
     @("MY_SERVER_NAME1", "MY_SERVER_NAME2") | Get-WebSiteBinding
+
+    Description
+    -----------
+    Returns all the web site bindings for the specified servers.
 .EXAMPLE
     Get-Content myServerNames.txt | Get-WebSiteBinding
 
 .NOTES
     Author: Matthewjdegarmo
     GitHub: https://github.com/matthewjdegarmo
+    Sponsor: https://github.com/sponsors/matthewjdegarmo
 #>
 function Get-PSIISBinding() {
     [CmdletBinding()]
