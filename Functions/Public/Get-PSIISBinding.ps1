@@ -47,7 +47,10 @@ function Get-PSIISBinding() {
         [Parameter(
             ValueFromPipeline
         )]
-        [System.String[]] $ComputerName
+        [System.String[]] $ComputerName = $env:COMPUTERNAME,
+
+        [Parameter()]
+        [System.String] $Port = '*'
     )
 
     Begin {
@@ -55,13 +58,21 @@ function Get-PSIISBinding() {
         Write-Verbose -Message "Starting Get-PSIISBinding"
         
         $scriptBlock = {
+            [CmdletBinding()]
+            Param(
+                [System.String] $Port
+            )
             Import-Module WebAdministration;
             $sites = Get-ChildItem -path IIS:\Sites
             foreach ($Site in $sites) {
                 foreach ($Bind in (Get-WebBinding $Site.Name)) {
                     foreach ($bindinfo in ($Bind | Select-Object -ExpandProperty bindingInformation)) {
                         $bindingInformation = @($bindinfo -split ':')
-
+                        if ('*' -ne $Port) {
+                            If ($Port -ne $bindingInformation[1]) {
+                                continue
+                            }
+                        }
                         [pscustomobject]@{
                             Server          = $env:COMPUTERNAME
                             Sitename        = $Site.name
@@ -82,8 +93,19 @@ function Get-PSIISBinding() {
     }
 
     Process {
+        Switch($Port) {
+            'HTTP' {$Port = '80'}
+            'HTTPS' {$Port = '443'}
+            DEFAULT {}
+        }
         Write-Verbose "Retrieving IIS information from $ComputerName"
-        Invoke-Command -ComputerName $ComputerName -ScriptBlock  $scriptBlock | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+        If (IsLocal $ComputerName) {
+            Write-Verbose "$($MyInvocation.MyCommand.Name): Running on local computer: $env:COMPUTERNAME"
+            & $scriptBlock -Port $Port -Verbose:$VerbosePreference | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+        } Else {
+            Write-Verbose "$($MyInvocation.MyCommand.Name): Running on remote computer: $COMPUTERNAME"
+            Invoke-Command -ComputerName $ComputerName -ScriptBlock  $scriptBlock -ArgumentList $Port | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+        }
     }
 }
 #EndRegion Get-PSIISBinding
