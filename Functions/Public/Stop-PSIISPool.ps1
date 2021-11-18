@@ -15,6 +15,8 @@
 
     $Pool | Stop-PSIISPool                             # $Pool will have Sites information and pass it through the pipeline.
     Stop-PSIISPool -ComputerName Server1 -Name Pool1   # No site information will be included..
+.PARAMETER PassThru
+    If true, the command will return the IIS information.
 .EXAMPLE
     PS> Stop-PSIISPool -ComputerName WebServer01 -Name DefaultSitePool
 
@@ -61,7 +63,9 @@ Function Stop-PSIISPool() {
 
         [Parameter(ValueFromPipelineByPropertyName)]
         [Alias('Sitename', 'Applications')]
-        [System.String[]] $Sites
+        [System.String[]] $Sites,
+
+        [switch]$PassThru
     )
 
     Begin {}
@@ -120,18 +124,19 @@ Function Stop-PSIISPool() {
             $ScriptBlock = {
                 [CmdletBinding()]
                 Param(
-                    $Pool
+                    $Pool,
+                    [switch]$PassThru
                 )
                 Write-Verbose "$($Pool.ComputerName): Stopping Pool: $($Pool.Name)"
                 Import-Module WebAdministration
-                Stop-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue
-                Get-PSIISPool -Name $Pool.Name -State 'Stopped'
+                Stop-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue -PassThru:$PassThru
+                # Get-PSIISPool -Name $Pool.Name -State 'Stopped'
             }
 
             If (IsLocal $Pool.ComputerName) {
-                & $ScriptBlock -Pool $Pool
+                & $ScriptBlock -Pool $Pool -PassThru:$PassThru
             } Else {
-                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool
+                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool, $PassThru
             }
         }
     }
