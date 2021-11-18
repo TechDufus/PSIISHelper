@@ -1,4 +1,19 @@
-# Changelog for HelpDesk
+# Changelog for PSIISHelper
+
+## v0.0.2
+
+`New-Functions`:
+
++ `Get-PSIISPool`
++ `Get-PSIISPoolWPRequests`
++ `Get-PSIISSite`
++ `New-PSIISBinding`
++ `New-PSIISNicIPAddress`
++ `Restart-PSIISPool`
++ `Restart-PSIISSite`
++ `Start-PSIISPool`
++ `Start-PSIISSite`
++ `Stop-PSIISPool`
 
 ## v0.0.1
 

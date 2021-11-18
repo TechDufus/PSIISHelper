@@ -15,6 +15,8 @@
 
     $Pool | Restart-PSIISPool                             # $Pool will have Sites information and pass it through the pipeline.
     Restart-PSIISPool -ComputerName Server1 -Name Pool1   # No site information will be included..
+.PARAMETER PassThru
+    If true, the command will return the IIS information.
 .EXAMPLE
     PS> Restart-PSIISPool -ComputerName WebServer01 -Name DefaultSitePool
 
@@ -60,7 +62,9 @@ Function Restart-PSIISPool() {
 
         [Parameter(ValueFromPipelineByPropertyName)]
         [Alias('Sitename', 'Applications')]
-        [System.String[]] $Sites
+        [System.String[]] $Sites,
+
+        [switch]$PassThru
     )
 
     Begin {}
@@ -119,18 +123,26 @@ Function Restart-PSIISPool() {
             $ScriptBlock = {
                 [CmdletBinding()]
                 Param(
-                    $Pool
+                    $Pool,
+                    [switch]$PassThru
                 )
                 Write-Verbose "$($Pool.ComputerName): Recycling Pool: $($Pool.Name)"
                 Import-Module WebAdministration
-                Restart-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue
-                Get-PSIISPool -Name $Site.Name -State 'Started'
+                
+                Try  {
+                    Restart-WebAppPool -Name $Pool.Name
+                } Catch {
+                    $_
+                }
+                If ($PassThru) {
+                    Get-PSIISPool -Name $Pool.Name -State 'Started'
+                }
             }
 
             If (IsLocal $Pool.ComputerName) {
-                & $ScriptBlock -Pool $Pool
+                & $ScriptBlock -Pool $Pool -PassThru:$PassThru
             } Else {
-                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool
+                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool, $PassThru
             }
         }
     }

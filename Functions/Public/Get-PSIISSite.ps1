@@ -2,9 +2,17 @@
 
 <#
 .SYNOPSIS
-
+    Get IIS Site information.
 .DESCRIPTION
-
+    Get IIS Site information.
+.PARAMETER ComputerName
+    Specify a remote computer to run against.
+.PARAMETER Name
+    Specify the name of the Application Pool to search for.
+.PARAMETER State
+    Specify the state of the application pool to query.
+.EXAMPLE
+    Get-PSIISSite -ComputerName "localhost" -Name "DefaultSite"
 .NOTES
     Author: matthewjdegarmo
     GitHub: https://github.com/matthewjdegarmo
