@@ -22,7 +22,9 @@ Function Start-PSIISSite() {
         
         [Parameter(ValueFromPipelineByPropertyName)]
         [Alias('Sitename')]
-        [System.String] $Name
+        [System.String] $Name,
+
+        [switch]$PassThru
     )
 
     Begin {}
@@ -63,17 +65,17 @@ Function Start-PSIISSite() {
             $ScriptBlock = {
                 [CmdletBinding()]
                 Param(
-                    $Site
+                    $Site,
+                    [switch]$PassThru
                 )
                 Import-Module WebAdministration
-                Start-Website -Name $Site.Name -ErrorAction SilentlyContinue
-                Get-PSIISSite -Name $Site.Name -State 'Started'
+                Start-Website -Name $Site.Name -ErrorAction SilentlyContinue -PassThru:$PassThru
             }
-            $Site.ComputerName | FOreach-Object {
+            $Site.ComputerName | Foreach-Object {
                 If (IsLocal $_) {
-                    & $ScriptBlock -Site $Site
+                    & $ScriptBlock -Site $Site -PassThru:$PassThru
                 } Else {
-                    Invoke-Command -ComputerName $_ -ScriptBlock $ScriptBlock -ArgumentList $Site | Select-Object -ExcludeProperty RunspaceId
+                    Invoke-Command -ComputerName $_ -ScriptBlock $ScriptBlock -ArgumentList $Site, $PassThru | Select-Object -ExcludeProperty RunspaceId
                 }
             }
         }

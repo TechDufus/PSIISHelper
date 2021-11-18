@@ -61,7 +61,9 @@ Function Stop-PSIISPool() {
 
         [Parameter(ValueFromPipelineByPropertyName)]
         [Alias('Sitename', 'Applications')]
-        [System.String[]] $Sites
+        [System.String[]] $Sites,
+
+        [switch]$PassThru
     )
 
     Begin {}
@@ -120,18 +122,19 @@ Function Stop-PSIISPool() {
             $ScriptBlock = {
                 [CmdletBinding()]
                 Param(
-                    $Pool
+                    $Pool,
+                    [switch]$PassThru
                 )
                 Write-Verbose "$($Pool.ComputerName): Stopping Pool: $($Pool.Name)"
                 Import-Module WebAdministration
-                Stop-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue
-                Get-PSIISPool -Name $Pool.Name -State 'Stopped'
+                Stop-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue -PassThru:$PassThru
+                # Get-PSIISPool -Name $Pool.Name -State 'Stopped'
             }
 
             If (IsLocal $Pool.ComputerName) {
-                & $ScriptBlock -Pool $Pool
+                & $ScriptBlock -Pool $Pool -PassThru:$PassThru
             } Else {
-                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool
+                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool, $PassThru
             }
         }
     }

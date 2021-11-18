@@ -61,7 +61,9 @@ Function Start-PSIISPool() {
 
         [Parameter(ValueFromPipelineByPropertyName)]
         [Alias('Sitename', 'Applications')]
-        [System.String[]] $Sites
+        [System.String[]] $Sites,
+
+        [switch]$PassThru
     )
 
     Begin {}
@@ -120,18 +122,18 @@ Function Start-PSIISPool() {
             $ScriptBlock = {
                 [CmdletBinding()]
                 Param(
-                    $Pool
+                    $Pool,
+                    [switch]$PassThru
                 )
                 Write-Verbose "$($Pool.ComputerName): Starting Pool: $($Pool.Name)"
                 Import-Module WebAdministration
-                Start-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue
-                Get-PSIISPool -Name $Site.Name -State 'Started'
+                Start-WebAppPool -Name $Pool.Name -ErrorAction SilentlyContinue -PassThru:$PassThru
             }
 
             If (IsLocal $Pool.ComputerName) {
-                & $ScriptBlock -Pool $Pool
+                & $ScriptBlock -Pool $Pool -PassThru:$PassThru
             } Else {
-                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool
+                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool, $PassThru
             }
         }
     }
