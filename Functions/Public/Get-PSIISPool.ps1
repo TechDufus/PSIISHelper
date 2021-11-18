@@ -10,7 +10,7 @@
 .PARAMETER Name
     Specify the name of the Application Pool to search for.
 .PARAMETER State
-    Specify the state of the application pool to query
+    Specify the state of the application pool to query.
 .EXAMPLE
     PS> Get-PSIISPool -ComputerName some-remote-pc1
 

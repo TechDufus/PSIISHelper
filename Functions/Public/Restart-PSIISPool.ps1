@@ -15,6 +15,8 @@
 
     $Pool | Restart-PSIISPool                             # $Pool will have Sites information and pass it through the pipeline.
     Restart-PSIISPool -ComputerName Server1 -Name Pool1   # No site information will be included..
+.PARAMETER PassThru
+    If true, the command will return the IIS information.
 .EXAMPLE
     PS> Restart-PSIISPool -ComputerName WebServer01 -Name DefaultSitePool
 

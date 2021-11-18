@@ -8,7 +8,9 @@
 
     Requires administrator permissions.
 .PARAMETER ComputerName
-    A string or string array of server names
+    A string or string array of server names.
+.PARAMETER Port
+    The port number to use for the connection.
 .EXAMPLE
     Get-WebSiteBinding MY_SERVER_NAME
 

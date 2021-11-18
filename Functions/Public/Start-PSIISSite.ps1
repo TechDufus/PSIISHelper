@@ -2,9 +2,17 @@
 
 <#
 .SYNOPSIS
-
+    Start an IIS Site.
 .DESCRIPTION
-
+    Start an IIS Site.
+.PARAMETER ComputerName
+    Specify a remote computer to run against.
+.PARAMETER Name
+    Specify the name of the IIS Site to search for.
+.PARAMETER PassThru
+    If true, the command will return the IIS information.
+.EXAMPLE
+    Start-PSIISSite -ComputerName localhost -Name MySite
 .NOTES
     Author:  matthewjdegarmo
     GitHub:  https://github.com/matthewjdegarmo

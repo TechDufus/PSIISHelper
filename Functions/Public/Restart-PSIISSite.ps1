@@ -9,6 +9,8 @@
     Specify the remote server to run against.
 .PARAMETER Name
     Specify the website name to restart.
+.PARAMETER PassThru
+    If true, the command will return the IIS information.
 .EXAMPLE
     PS> Restart-PSIISSite -ComputerName WebServer01 -Name DefaultSite
 
