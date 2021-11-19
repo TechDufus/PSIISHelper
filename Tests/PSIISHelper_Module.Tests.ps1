@@ -30,44 +30,4 @@ Describe "PSIISHelper Module Public Tests" {
     }
 }
 
-# InModuleScope PSIISHelper {
-#     Describe "PSIISHelper Module Private Tests" {
-#         Context 'Private Functions' -Tag Private {
-#             It 'should import successfully' {
-#                 $PrivateImportedCommands = (Get-Command -Module PSIISHelper).Name
-#                 $PrivateFiles = Get-ChildItem ([System.IO.Path]::Combine($PSScriptRoot, '..', 'Functions', 'Private', '*.ps1')) -Exclude *tests.ps1, Aliases.ps1 | ForEach-Object {
-#                     $_
-#                 }
-#                 $PrivateImportSuccessfulFunctions = Compare-Object $PrivateImportedCommands $PrivateFiles.BaseName -IncludeEqual -ExcludeDifferent
-#                 $PrivateImportSuccessfulFunctions.InputObject | Should -Be $PrivateFiles.BaseName
-#             }
-            
-#             Get-ChildItem ([System.IO.Path]::Combine($PSScriptRoot, '..', 'Functions', 'Private', '*.ps1')) -Exclude *tests.ps1, Aliases.ps1 | ForEach-Object {
-#                 Context "Test Function: $($_.BaseName)" {
-#                     $PSDefaultParameterValues = @{
-#                         "It:TestCases" = @{ CurrentFunction = $_ }
-#                     }
-#                     It "Should register command with Get-Command" {
-#                         (Get-Command $CurrentFunction.BaseName) | Should -BeOfType [System.Management.Automation.CommandInfo]
-#                     }
-#                     It "Should have Begin and End Regions" {
-#                         $CurrentFunction.FullName | Should -FileContentMatch "#Region"
-#                         $CurrentFunction.FullName | Should -FileContentMatch "#EndRegion"
-#                     }
-#                     It "Should be an advanced function" {
-#                         $CurrentFunction.FullName | Should -FileContentMatch 'function'
-#                         $CurrentFunction.FullName | Should -FileContentMatch 'cmdletbinding'
-#                         $CurrentFunction.FullName | Should -FileContentMatch 'param'
-#                     }
-#                     It "Should be valid PowerShell code" {
-#                         $FileContent = Get-Content -Path $CurrentFunction.FullName -ErrorAction Stop
-#                         $Errors = $null
-#                         $null = [System.Management.Automation.PSParser]::Tokenize($FileContent, [ref]$errors)
-#                         $errors.Count | Should -be 0
-#                     }
-#                 }
-#             }
-#         }
-#     }
-# }
 

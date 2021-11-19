@@ -1,16 +1,22 @@
-BeforeDiscovery {
-    #! Finish nested path splitting.
-    $ModuleRoot =   Split-Path (
-                        Split-Path (
-                            Split-Path $PSScriptRoot -Parent
-                        ) -Parent
-                    ) -Parent
-    Remove-Module PSIISHelper -Force -ErrorAction SilentlyContinue
-    Import-Module $ModuleRoot -Force
-}
-
 InModuleScope PSIISHelper {
-    Describe "Function: IsLocal" {
+    BeforeDiscovery {
+        $ModuleRoot =   Split-Path (
+                            Split-Path (
+                                Split-Path $PSScriptRoot -Parent
+                            ) -Parent
+                        ) -Parent
+        Remove-Module PSIISHelper -Force -ErrorAction SilentlyContinue
+        Import-Module $ModuleRoot -Force
+        $PrivateFunctionPath = Join-Path $ModuleRoot 'Functions' 'Private' 'IsLocal.ps1'
+
+        $PrivateFunction = Get-ChildItem $PrivateFunctionPath
+    }
+    Describe "Function: <_.BaseName" -ForEach $PrivateFunction {
+        BeforeAll {
+            #This is because InModuleScope isn't acting like I expect it
+            # so I have to dot-source the file directly.
+            . $_.FullName
+        }
         Context "Valid Values that return False:" {
             It "Should return $false for non-local computer names:" -TestCases @(
                 @{ComputerName = 'notlocalhost'},
