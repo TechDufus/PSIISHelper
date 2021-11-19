@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="127" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2021-11-19" time="13:50:21">
+  <environment cwd="C:\Users\matth\OneDrive\Documents\code\PSIISHelper" user-domain="SHERLOCK" os-version="10.0.19044" nunit-version="2.5.8.0" clr-version="Unknown" platform="Microsoft Windows 10 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3" machine-name="SHERLOCK" user="matth" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="0.8984" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\PSIISHelper_Manifest.Tests.ps1" executed="True" result="Success" success="True" time="0.0939" asserts="0" description="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\PSIISHelper_Manifest.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="PSIISHelper Manifest Tests" executed="True" result="Success" success="True" time="0.0162" asserts="0" description="PSIISHelper Manifest Tests">
+            <results>
+              <test-suite type="ParameterizedTest" name="PSIISHelper Manifest Tests.Exports Functions" executed="True" result="Success" success="True" time="0.0024" asserts="0" description="Exports Functions">
+                <results>
+                  <test-case description="Exports Functions" name="PSIISHelper Manifest Tests.Exports Functions(PSIISHelper)" time="0.0024" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PSIISHelper Manifest Tests.Has a Version Number" executed="True" result="Success" success="True" time="0.0021" asserts="0" description="Has a Version Number">
+                <results>
+                  <test-case description="Has a Version Number" name="PSIISHelper Manifest Tests.Has a Version Number(PSIISHelper)" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PSIISHelper Manifest Tests.Has an Author" executed="True" result="Success" success="True" time="0.002" asserts="0" description="Has an Author">
+                <results>
+                  <test-case description="Has an Author" name="PSIISHelper Manifest Tests.Has an Author(PSIISHelper)" time="0.002" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PSIISHelper Manifest Tests.Has a Description" executed="True" result="Success" success="True" time="0.0022" asserts="0" description="Has a Description">
+                <results>
+                  <test-case description="Has a Description" name="PSIISHelper Manifest Tests.Has a Description(PSIISHelper)" time="0.0022" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PSIISHelper Manifest Tests.Has correct RootModule" executed="True" result="Success" success="True" time="0.0021" asserts="0" description="Has correct RootModule">
+                <results>
+                  <test-case description="Has correct RootModule" name="PSIISHelper Manifest Tests.Has correct RootModule(PSIISHelper)" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="PSIISHelper Manifest Tests.Passes Test-ModuleManifest" executed="True" result="Success" success="True" time="0.0033" asserts="0" description="Passes Test-ModuleManifest">
+                <results>
+                  <test-case description="Passes Test-ModuleManifest" name="PSIISHelper Manifest Tests.Passes Test-ModuleManifest(PSIISHelper)" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="TestFixture" name="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\PSIISHelper_Module.Tests.ps1" executed="True" result="Success" success="True" time="0.0631" asserts="0" description="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\PSIISHelper_Module.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="PSIISHelper Module Public Tests" executed="True" result="Success" success="True" time="0.015" asserts="0" description="PSIISHelper Module Public Tests">
+            <results>
+              <test-suite type="TestFixture" name="PSIISHelper Module Public Tests.Aliases" executed="True" result="Success" success="True" time="0.0056" asserts="0" description="PSIISHelper Module Public Tests.Aliases">
+                <results>
+                  <test-case description="should import successfully" name="PSIISHelper Module Public Tests.Aliases.should import successfully" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="PSIISHelper Module Public Tests.Files" executed="True" result="Success" success="True" time="0.0132" asserts="0" description="PSIISHelper Module Public Tests.Files">
+                <results>
+                  <test-case description="LICENSE should exist" name="PSIISHelper Module Public Tests.Files.LICENSE should exist" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="CHANGELOG.md should exist" name="PSIISHelper Module Public Tests.Files.CHANGELOG.md should exist" time="0.0026" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="TestFixture" name="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\Functions\Private\PSIISHelper_IsLocal.Tests.ps1" executed="True" result="Success" success="True" time="0.0846" asserts="0" description="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\Functions\Private\PSIISHelper_IsLocal.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Function: IsLocal" executed="True" result="Success" success="True" time="0.0439" asserts="0" description="Function: IsLocal">
+            <results>
+              <test-suite type="TestFixture" name="Function: IsLocal.Valid Values that return False:" executed="True" result="Success" success="True" time="0.0214" asserts="0" description="Function: IsLocal.Valid Values that return False:">
+                <results>
+                  <test-suite type="ParameterizedTest" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:" executed="True" result="Success" success="True" time="0.0192" asserts="0" description="Should return False for non-local computer names:">
+                    <results>
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:(&quot;notlocalhost&quot;)" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:(&quot;I.Have.a.period&quot;)" time="0.0024" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:(&quot;..&quot;)" time="0.0022" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:(&quot;.localhost.&quot;)" time="0.0022" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:(&quot;COMPUTERNAME&quot;)" time="0.0022" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:(&quot;$env:COMPUTERNAME&quot;)" time="0.0021" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return False for non-local computer names:" name="Function: IsLocal.Valid Values that return False:.Should return False for non-local computer names:" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: IsLocal.Valid Values that return True:" executed="True" result="Success" success="True" time="0.0384" asserts="0" description="Function: IsLocal.Valid Values that return True:">
+                <results>
+                  <test-suite type="ParameterizedTest" name="Function: IsLocal.Valid Values that return True:.Should return True for local computer names:" executed="True" result="Success" success="True" time="0.0151" asserts="0" description="Should return True for local computer names:">
+                    <results>
+                      <test-case description="Should return True for local computer names:" name="Function: IsLocal.Valid Values that return True:.Should return True for local computer names:(&quot;localhost&quot;)" time="0.01" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return True for local computer names:" name="Function: IsLocal.Valid Values that return True:.Should return True for local computer names:(&quot;.&quot;)" time="0.0026" asserts="0" success="True" result="Success" executed="True" />
+                      <test-case description="Should return True for local computer names:" name="Function: IsLocal.Valid Values that return True:.Should return True for local computer names:(&quot;SHERLOCK&quot;)" time="0.0025" asserts="0" success="True" result="Success" executed="True" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="TestFixture" name="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\Functions\Private\PSIISHelper_PrivateFunctions_Universal.Tests.ps1" executed="True" result="Success" success="True" time="0.1035" asserts="0" description="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\Functions\Private\PSIISHelper_PrivateFunctions_Universal.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Function: IsLocal" executed="True" result="Success" success="True" time="0.043" asserts="0" description="Function: IsLocal">
+            <results>
+              <test-suite type="TestFixture" name="Function: IsLocal.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0062" asserts="0" description="Function: IsLocal.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: IsLocal.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0044" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: IsLocal.Should register command with Get-Command" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: IsLocal.Should have comment-based help block" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: IsLocal.Should have SYNOPSIS section in help" time="0.0025" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: IsLocal.Should have DESCRIPTION section in help" time="0.0081" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: IsLocal.Should have EXAMPLE section in help" time="0.0028" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: IsLocal.Should have NOTES section in help" time="0.0027" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: IsLocal.Should be an advanced function" time="0.0043" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: IsLocal.Should have Begin and End Regions" time="0.0034" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: IsLocal.Should be valid PowerShell code" time="0.0028" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="TestFixture" name="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\Functions\Public\PSIISHelper_PublicFunctions_Universal.Tests.ps1" executed="True" result="Success" success="True" time="0.5534" asserts="0" description="C:\Users\matth\OneDrive\Documents\code\PSIISHelper\Tests\Functions\Public\PSIISHelper_PublicFunctions_Universal.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Function: Get-PSIISBinding" executed="True" result="Success" success="True" time="0.052" asserts="0" description="Function: Get-PSIISBinding">
+            <results>
+              <test-suite type="TestFixture" name="Function: Get-PSIISBinding.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0066" asserts="0" description="Function: Get-PSIISBinding.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISBinding.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Get-PSIISBinding.Parameter - Port" executed="True" result="Success" success="True" time="0.0121" asserts="0" description="Function: Get-PSIISBinding.Parameter - Port">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISBinding.Parameter - Port.Should have .PARAMETER help for each defined parameter" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Get-PSIISBinding.Should register command with Get-Command" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Get-PSIISBinding.Should have comment-based help block" time="0.0039" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Get-PSIISBinding.Should have SYNOPSIS section in help" time="0.0029" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Get-PSIISBinding.Should have DESCRIPTION section in help" time="0.0085" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Get-PSIISBinding.Should have EXAMPLE section in help" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Get-PSIISBinding.Should have NOTES section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Get-PSIISBinding.Should be an advanced function" time="0.0048" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Get-PSIISBinding.Should have Begin and End Regions" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Get-PSIISBinding.Should be valid PowerShell code" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Get-PSIISPool" executed="True" result="Success" success="True" time="0.1115" asserts="0" description="Function: Get-PSIISPool">
+            <results>
+              <test-suite type="TestFixture" name="Function: Get-PSIISPool.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0067" asserts="0" description="Function: Get-PSIISPool.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISPool.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Get-PSIISPool.Parameter - Name" executed="True" result="Success" success="True" time="0.0122" asserts="0" description="Function: Get-PSIISPool.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISPool.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Get-PSIISPool.Parameter - State" executed="True" result="Success" success="True" time="0.0177" asserts="0" description="Function: Get-PSIISPool.Parameter - State">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISPool.Parameter - State.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Get-PSIISPool.Should register command with Get-Command" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Get-PSIISPool.Should have comment-based help block" time="0.0042" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Get-PSIISPool.Should have SYNOPSIS section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Get-PSIISPool.Should have DESCRIPTION section in help" time="0.0094" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Get-PSIISPool.Should have EXAMPLE section in help" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Get-PSIISPool.Should have NOTES section in help" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Get-PSIISPool.Should be an advanced function" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Get-PSIISPool.Should have Begin and End Regions" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Get-PSIISPool.Should be valid PowerShell code" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Get-PSIISSite" executed="True" result="Success" success="True" time="0.1673" asserts="0" description="Function: Get-PSIISSite">
+            <results>
+              <test-suite type="TestFixture" name="Function: Get-PSIISSite.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0071" asserts="0" description="Function: Get-PSIISSite.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISSite.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0048" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Get-PSIISSite.Parameter - Name" executed="True" result="Success" success="True" time="0.0127" asserts="0" description="Function: Get-PSIISSite.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISSite.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Get-PSIISSite.Parameter - State" executed="True" result="Success" success="True" time="0.018" asserts="0" description="Function: Get-PSIISSite.Parameter - State">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Get-PSIISSite.Parameter - State.Should have .PARAMETER help for each defined parameter" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Get-PSIISSite.Should register command with Get-Command" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Get-PSIISSite.Should have comment-based help block" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Get-PSIISSite.Should have SYNOPSIS section in help" time="0.0026" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Get-PSIISSite.Should have DESCRIPTION section in help" time="0.0027" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Get-PSIISSite.Should have EXAMPLE section in help" time="0.0079" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Get-PSIISSite.Should have NOTES section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Get-PSIISSite.Should be an advanced function" time="0.0045" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Get-PSIISSite.Should have Begin and End Regions" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Get-PSIISSite.Should be valid PowerShell code" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Restart-PSIISPool" executed="True" result="Success" success="True" time="0.2336" asserts="0" description="Function: Restart-PSIISPool">
+            <results>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISPool.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0066" asserts="0" description="Function: Restart-PSIISPool.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISPool.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISPool.Parameter - Name" executed="True" result="Success" success="True" time="0.0121" asserts="0" description="Function: Restart-PSIISPool.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISPool.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISPool.Parameter - Sites" executed="True" result="Success" success="True" time="0.0188" asserts="0" description="Function: Restart-PSIISPool.Parameter - Sites">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISPool.Parameter - Sites.Should have .PARAMETER help for each defined parameter" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISPool.Parameter - PassThru" executed="True" result="Success" success="True" time="0.0251" asserts="0" description="Function: Restart-PSIISPool.Parameter - PassThru">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISPool.Parameter - PassThru.Should have .PARAMETER help for each defined parameter" time="0.0043" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Restart-PSIISPool.Should register command with Get-Command" time="0.0022" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Restart-PSIISPool.Should have comment-based help block" time="0.004" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Restart-PSIISPool.Should have SYNOPSIS section in help" time="0.0086" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Restart-PSIISPool.Should have DESCRIPTION section in help" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Restart-PSIISPool.Should have EXAMPLE section in help" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Restart-PSIISPool.Should have NOTES section in help" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Restart-PSIISPool.Should be an advanced function" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Restart-PSIISPool.Should have Begin and End Regions" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Restart-PSIISPool.Should be valid PowerShell code" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Restart-PSIISSite" executed="True" result="Success" success="True" time="0.2903" asserts="0" description="Function: Restart-PSIISSite">
+            <results>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISSite.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0065" asserts="0" description="Function: Restart-PSIISSite.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISSite.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0046" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISSite.Parameter - Name" executed="True" result="Success" success="True" time="0.0117" asserts="0" description="Function: Restart-PSIISSite.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISSite.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Restart-PSIISSite.Parameter - PassThru" executed="True" result="Success" success="True" time="0.0167" asserts="0" description="Function: Restart-PSIISSite.Parameter - PassThru">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Restart-PSIISSite.Parameter - PassThru.Should have .PARAMETER help for each defined parameter" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Restart-PSIISSite.Should register command with Get-Command" time="0.0023" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Restart-PSIISSite.Should have comment-based help block" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Restart-PSIISSite.Should have SYNOPSIS section in help" time="0.0086" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Restart-PSIISSite.Should have DESCRIPTION section in help" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Restart-PSIISSite.Should have EXAMPLE section in help" time="0.0028" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Restart-PSIISSite.Should have NOTES section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Restart-PSIISSite.Should be an advanced function" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Restart-PSIISSite.Should have Begin and End Regions" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Restart-PSIISSite.Should be valid PowerShell code" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Start-PSIISPool" executed="True" result="Success" success="True" time="0.3557" asserts="0" description="Function: Start-PSIISPool">
+            <results>
+              <test-suite type="TestFixture" name="Function: Start-PSIISPool.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0066" asserts="0" description="Function: Start-PSIISPool.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISPool.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0048" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Start-PSIISPool.Parameter - Name" executed="True" result="Success" success="True" time="0.0122" asserts="0" description="Function: Start-PSIISPool.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISPool.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Start-PSIISPool.Parameter - Sites" executed="True" result="Success" success="True" time="0.0178" asserts="0" description="Function: Start-PSIISPool.Parameter - Sites">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISPool.Parameter - Sites.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Start-PSIISPool.Parameter - PassThru" executed="True" result="Success" success="True" time="0.0233" asserts="0" description="Function: Start-PSIISPool.Parameter - PassThru">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISPool.Parameter - PassThru.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Start-PSIISPool.Should register command with Get-Command" time="0.0024" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Start-PSIISPool.Should have comment-based help block" time="0.01" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Start-PSIISPool.Should have SYNOPSIS section in help" time="0.0033" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Start-PSIISPool.Should have DESCRIPTION section in help" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Start-PSIISPool.Should have EXAMPLE section in help" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Start-PSIISPool.Should have NOTES section in help" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Start-PSIISPool.Should be an advanced function" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Start-PSIISPool.Should have Begin and End Regions" time="0.004" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Start-PSIISPool.Should be valid PowerShell code" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Start-PSIISSite" executed="True" result="Success" success="True" time="0.4121" asserts="0" description="Function: Start-PSIISSite">
+            <results>
+              <test-suite type="TestFixture" name="Function: Start-PSIISSite.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0065" asserts="0" description="Function: Start-PSIISSite.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISSite.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0046" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Start-PSIISSite.Parameter - Name" executed="True" result="Success" success="True" time="0.0119" asserts="0" description="Function: Start-PSIISSite.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISSite.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Start-PSIISSite.Parameter - PassThru" executed="True" result="Success" success="True" time="0.0178" asserts="0" description="Function: Start-PSIISSite.Parameter - PassThru">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Start-PSIISSite.Parameter - PassThru.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Start-PSIISSite.Should register command with Get-Command" time="0.0077" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Start-PSIISSite.Should have comment-based help block" time="0.0041" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Start-PSIISSite.Should have SYNOPSIS section in help" time="0.0029" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Start-PSIISSite.Should have DESCRIPTION section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Start-PSIISSite.Should have EXAMPLE section in help" time="0.0028" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Start-PSIISSite.Should have NOTES section in help" time="0.0026" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Start-PSIISSite.Should be an advanced function" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Start-PSIISSite.Should have Begin and End Regions" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Start-PSIISSite.Should be valid PowerShell code" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="Function: Stop-PSIISPool" executed="True" result="Success" success="True" time="0.4766" asserts="0" description="Function: Stop-PSIISPool">
+            <results>
+              <test-suite type="TestFixture" name="Function: Stop-PSIISPool.Parameter - ComputerName" executed="True" result="Success" success="True" time="0.0067" asserts="0" description="Function: Stop-PSIISPool.Parameter - ComputerName">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Stop-PSIISPool.Parameter - ComputerName.Should have .PARAMETER help for each defined parameter" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Stop-PSIISPool.Parameter - Name" executed="True" result="Success" success="True" time="0.0123" asserts="0" description="Function: Stop-PSIISPool.Parameter - Name">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Stop-PSIISPool.Parameter - Name.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Stop-PSIISPool.Parameter - Sites" executed="True" result="Success" success="True" time="0.0177" asserts="0" description="Function: Stop-PSIISPool.Parameter - Sites">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Stop-PSIISPool.Parameter - Sites.Should have .PARAMETER help for each defined parameter" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="Function: Stop-PSIISPool.Parameter - PassThru" executed="True" result="Success" success="True" time="0.0295" asserts="0" description="Function: Stop-PSIISPool.Parameter - PassThru">
+                <results>
+                  <test-case description="Should have .PARAMETER help for each defined parameter" name="Function: Stop-PSIISPool.Parameter - PassThru.Should have .PARAMETER help for each defined parameter" time="0.0097" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-case description="Should register command with Get-Command" name="Function: Stop-PSIISPool.Should register command with Get-Command" time="0.0025" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have comment-based help block" name="Function: Stop-PSIISPool.Should have comment-based help block" time="0.0042" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have SYNOPSIS section in help" name="Function: Stop-PSIISPool.Should have SYNOPSIS section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have DESCRIPTION section in help" name="Function: Stop-PSIISPool.Should have DESCRIPTION section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have EXAMPLE section in help" name="Function: Stop-PSIISPool.Should have EXAMPLE section in help" time="0.0031" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have NOTES section in help" name="Function: Stop-PSIISPool.Should have NOTES section in help" time="0.003" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be an advanced function" name="Function: Stop-PSIISPool.Should be an advanced function" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should have Begin and End Regions" name="Function: Stop-PSIISPool.Should have Begin and End Regions" time="0.004" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should be valid PowerShell code" name="Function: Stop-PSIISPool.Should be valid PowerShell code" time="0.0032" asserts="0" success="True" result="Success" executed="True" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
