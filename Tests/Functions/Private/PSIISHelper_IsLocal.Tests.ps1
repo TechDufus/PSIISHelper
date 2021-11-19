@@ -1,0 +1,47 @@
+InModuleScope PSIISHelper {
+    BeforeDiscovery {
+        #! Finish nested path splitting.
+        $ModuleRoot =   Split-Path (
+                            Split-Path (
+                                Split-Path $PSScriptRoot -Parent
+                            ) -Parent
+                        ) -Parent
+        Remove-Module PSIISHelper -Force -ErrorAction SilentlyContinue
+        Import-Module $ModuleRoot -Force
+    }
+
+    Describe "Function: IsLocal" {
+        Context "Valid Values that return False:" {
+            It "Should return $false for non-local computer names:" -TestCases @(
+                @{ComputerName = 'notlocalhost'},
+                @{ComputerName = 'I.Have.a.period'},
+                @{ComputerName = '..'},
+                @{ComputerName = '.localhost.'},
+                @{ComputerName = 'COMPUTERNAME'},
+                @{ComputerName = '$env:COMPUTERNAME'},
+                @{ComputerName = 'another.computer.here'}.
+                @{ComputerName = 'host'}
+            ) {
+                Param(
+                    [System.String]$ComputerName
+                )
+
+                IsLocal -ComputerName $ComputerName | Should -Be $false
+            }
+        }
+
+        Context "Valid Values that return True:" {
+            It "Should return $true for local computer names:" -TestCases @(
+                @{ComputerName = 'localhost'},
+                @{ComputerName = '.'},
+                @{ComputerName = "$env:COMPUTERNAME"}
+            ) {
+                Param(
+                    [System.String]$ComputerName
+                )
+
+                IsLocal -ComputerName $ComputerName | Should -Be $true
+            }
+        }
+    }
+}

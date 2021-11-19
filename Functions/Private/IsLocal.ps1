@@ -2,12 +2,21 @@
 
 <#
 .SYNOPSIS
-
+    Test to see if the provided computer name is the local computer.
 .DESCRIPTION
+    This function tests to see if the provided computer name is the local computer.
+.PARAMETER ComputerName
+    The computer name to test.
+.EXAMPLE
+    IsLocal "MyComputer"
 
+    Description
+    -----------
+    This function tests to see if the provided computer name is the local computer.
 .NOTES
-    Author: matthewjdegarmo
-    GitHub: https://github.com/matthewjdegarmo
+    Author:  matthewjdegarmo
+    GitHub:  https://github.com/matthewjdegarmo
+    Sponsor: https://github.com/sponsors/matthewjdegarmo
 #>
 Function IsLocal() {
     [CmdletBinding()]
@@ -26,7 +35,14 @@ Function IsLocal() {
 
     Process {
         Try {
-            $LocalValues.Contains($ComputerName)
+            $IsLocal = $LocalValues | Foreach-Object {
+                if ($_ -eq $ComputerName) {
+                    Write-Output $true
+                    break
+                }
+            }
+
+            [bool]$IsLocal
         } Catch {
             Throw $_
         }
