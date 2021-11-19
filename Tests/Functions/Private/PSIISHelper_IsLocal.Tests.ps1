@@ -1,3 +1,14 @@
+BeforeDiscovery {
+    #! Finish nested path splitting.
+    $ModuleRoot =   Split-Path (
+                        Split-Path (
+                            Split-Path $PSScriptRoot -Parent
+                        ) -Parent
+                    ) -Parent
+    Remove-Module PSIISHelper -Force -ErrorAction SilentlyContinue
+    Import-Module $ModuleRoot -Force
+}
+
 InModuleScope PSIISHelper {
     Describe "Function: IsLocal" {
         Context "Valid Values that return False:" {
