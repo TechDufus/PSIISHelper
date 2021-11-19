@@ -25,11 +25,11 @@ InModuleScope PSIISHelper {
                 Param(
                     [System.String]$ComputerName
                 )
-
+    
                 IsLocal -ComputerName $ComputerName | Should -Be $false
             }
         }
-
+    
         Context "Valid Values that return True:" {
             It "Should return $true for local computer names:" -TestCases @(
                 @{ComputerName = 'localhost'},
@@ -39,7 +39,7 @@ InModuleScope PSIISHelper {
                 Param(
                     [System.String]$ComputerName
                 )
-
+    
                 IsLocal -ComputerName $ComputerName | Should -Be $true
             }
         }
