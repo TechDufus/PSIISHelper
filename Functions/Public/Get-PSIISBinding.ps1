@@ -100,13 +100,15 @@ function Get-PSIISBinding() {
             'HTTPS' {$Port = '443'}
             DEFAULT {}
         }
-        Write-Verbose "Retrieving IIS information from $ComputerName"
-        If (IsLocal $ComputerName) {
-            Write-Verbose "$($MyInvocation.MyCommand.Name): Running on local computer: $env:COMPUTERNAME"
-            & $scriptBlock -Port $Port -Verbose:$VerbosePreference | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
-        } Else {
-            Write-Verbose "$($MyInvocation.MyCommand.Name): Running on remote computer: $COMPUTERNAME"
-            Invoke-Command -ComputerName $ComputerName -ScriptBlock  $scriptBlock -ArgumentList $Port | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+        $ComputerName | Foreach-Object {
+            Write-Verbose "Retrieving IIS information from $_"
+            If (IsLocal $_) {
+                Write-Verbose "$($MyInvocation.MyCommand.Name): Running on local computer: $env:COMPUTERNAME"
+                & $scriptBlock -Port $Port -Verbose:$VerbosePreference | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+            } Else {
+                Write-Verbose "$($MyInvocation.MyCommand.Name): Running on remote computer: $_"
+                Invoke-Command -ComputerName $_ -ScriptBlock  $scriptBlock -ArgumentList $Port | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+            }
         }
     }
 }
