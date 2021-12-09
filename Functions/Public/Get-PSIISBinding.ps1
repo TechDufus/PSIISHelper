@@ -11,6 +11,11 @@
     A string or string array of server names.
 .PARAMETER Port
     The port number to use for the connection.
+.PARAMETER Credential
+    The credentials to use for the connection. If not specified the connection will use the current user.
+    You can provide a PSCredential object, or use `New-PSIISSession` to create a PSCredential object that lives for the current powershell session.
+
+    See `Get-Help New-PSIISSession` for more details.
 .EXAMPLE
     Get-WebSiteBinding MY_SERVER_NAME
 
@@ -37,6 +42,12 @@
     Returns all the web site bindings for the specified servers.
 .EXAMPLE
     Get-Content myServerNames.txt | Get-WebSiteBinding
+.EXAMPLE
+    Get-WebSiteBinding -ComputerName "MY_SERVER_NAME" -Port 1234 -Credential $PSCredential
+
+    Description
+    -----------
+    Returns all the web site bindings for the specified server, using the specified credential.
 
 .NOTES
     Author: Matthewjdegarmo
@@ -52,7 +63,9 @@ function Get-PSIISBinding() {
         [System.String[]] $ComputerName = $env:COMPUTERNAME,
 
         [Parameter()]
-        [System.String] $Port = '*'
+        [System.String] $Port = '*',
+
+        [PSCredential]$Credential = $script:PSIISCredential
     )
 
     Begin {
@@ -107,7 +120,13 @@ function Get-PSIISBinding() {
                 & $scriptBlock -Port $Port -Verbose:$VerbosePreference | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
             } Else {
                 Write-Verbose "$($MyInvocation.MyCommand.Name): Running on remote computer: $_"
-                Invoke-Command -ComputerName $_ -ScriptBlock  $scriptBlock -ArgumentList $Port | Select-Object -ExcludeProperty PSComputerName, RunspaceID, PSShowComputerName
+                $InvokeCommandSplat = @{
+                    ComputerName = $_
+                    ScriptBlock = $ScriptBlock
+                    ArgumentList = @($Port)
+                }
+                If ($null -ne $Credential) { $InvokeCommandSplat['Credential'] = $Credential }
+                Invoke-Command @InvokeCommandSplat | Select-Object * -ExcludeProperty RunspaceID, PSShowComputerName
             }
         }
     }

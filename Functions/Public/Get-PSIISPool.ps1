@@ -11,6 +11,11 @@
     Specify the name of the Application Pool to search for.
 .PARAMETER State
     Specify the state of the application pool to query.
+.PARAMETER Credential
+    The credentials to use for the connection. If not specified the connection will use the current user.
+    You can provide a PSCredential object, or use `New-PSIISSession` to create a PSCredential object that lives for the current powershell session.
+
+    See `Get-Help New-PSIISSession` for more details.
 .EXAMPLE
     PS> Get-PSIISPool -ComputerName some-remote-pc1
 
@@ -60,7 +65,9 @@ Function Get-PSIISPool() {
 
         [Parameter()]
         [ValidateSet('Started','Stopped', '*')]
-        [System.String] $State = '*'
+        [System.String] $State = '*',
+
+        [PSCredential]$Credential = $script:PSIISCredential
     )
 
     Begin {
@@ -126,7 +133,13 @@ Function Get-PSIISPool() {
             If (IsLocal $_) {
                 & $ScriptBlock -InputObject $Pool -State $State
             } Else {
-                Invoke-Command -ComputerName $_ -ScriptBlock $ScriptBlock -ArgumentList $_, $State | Select-Object * -ExcludeProperty RunspaceID
+                $InvokeCommandSplat = @{
+                    ComputerName = $_
+                    ScriptBlock = $ScriptBlock
+                    ArgumentList = @($_, $State)
+                }
+                If ($null -ne $Credential) { $InvokeCommandSplat['Credential'] = $Credential }
+                Invoke-Command @InvokeCommandSplat | Select-Object * -ExcludeProperty RunspaceID
             }
         }
     }
