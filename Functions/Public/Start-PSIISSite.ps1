@@ -11,6 +11,11 @@
     Specify the name of the IIS Site to search for.
 .PARAMETER PassThru
     If true, the command will return the IIS information.
+.PARAMETER Credential
+    The credentials to use for the connection. If not specified the connection will use the current user.
+    You can provide a PSCredential object, or use `New-PSIISSession` to create a PSCredential object that lives for the current powershell session.
+
+    See `Get-Help New-PSIISSession` for more details.
 .EXAMPLE
     Start-PSIISSite -ComputerName localhost -Name MySite
 .NOTES
@@ -32,7 +37,9 @@ Function Start-PSIISSite() {
         [Alias('Sitename')]
         [System.String] $Name,
 
-        [switch]$PassThru
+        [switch]$PassThru,
+
+        [PSCredential]$Credential = $script:PSIISCredential
     )
 
     Begin {}
@@ -83,7 +90,13 @@ Function Start-PSIISSite() {
                 If (IsLocal $_) {
                     & $ScriptBlock -Site $Site -PassThru:$PassThru
                 } Else {
-                    Invoke-Command -ComputerName $_ -ScriptBlock $ScriptBlock -ArgumentList $Site, $PassThru | Select-Object -ExcludeProperty RunspaceId
+                    $InvokeCommandSplat = @{
+                        ComputerName = $_
+                        ScriptBlock = $ScriptBlock
+                        ArgumentList = @($Site, $PassThru)
+                    }
+                    If ($null -ne $Credential) { $InvokeCommandSplat['Credential'] = $Credential }
+                    Invoke-Command @InvokeCommandSplat | Select-Object * -ExcludeProperty RunspaceID
                 }
             }
         }

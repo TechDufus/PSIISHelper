@@ -12,7 +12,7 @@
 RootModule = 'PSIISHelper.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.2.2'
+ModuleVersion = '0.0.3'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Desktop','Core')
@@ -75,6 +75,8 @@ FunctionsToExport = 'Get-PSIISPool',
                     'Get-PSIISSite',
                     'New-PSIISBinding',
                     'New-PSIISNicIPAddress',
+                    'New-PSIISSession',
+                    'Remove-PSIISSession',
                     'Restart-PSIISPool',
                     'Restart-PSIISSite',
                     'Start-PSIISPool',

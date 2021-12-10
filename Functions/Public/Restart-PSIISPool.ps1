@@ -17,6 +17,11 @@
     Restart-PSIISPool -ComputerName Server1 -Name Pool1   # No site information will be included..
 .PARAMETER PassThru
     If true, the command will return the IIS information.
+.PARAMETER Credential
+    The credentials to use for the connection. If not specified the connection will use the current user.
+    You can provide a PSCredential object, or use `New-PSIISSession` to create a PSCredential object that lives for the current powershell session.
+
+    See `Get-Help New-PSIISSession` for more details.
 .EXAMPLE
     PS> Restart-PSIISPool -ComputerName WebServer01 -Name DefaultSitePool
 
@@ -64,7 +69,9 @@ Function Restart-PSIISPool() {
         [Alias('Sitename', 'Applications')]
         [System.String[]] $Sites,
 
-        [switch]$PassThru
+        [switch]$PassThru,
+
+        [PSCredential]$Credential = $script:PSIISCredential
     )
 
     Begin {}
@@ -142,7 +149,13 @@ Function Restart-PSIISPool() {
             If (IsLocal $Pool.ComputerName) {
                 & $ScriptBlock -Pool $Pool -PassThru:$PassThru
             } Else {
-                Invoke-Command -ComputerName $Pool.ComputerName -ScriptBlock $ScriptBlock -ArgumentList $Pool, $PassThru
+                $InvokeCommandSplat = @{
+                    ComputerName = $_
+                    ScriptBlock = $ScriptBlock
+                    ArgumentList = @($Pool, $PassThru)
+                }
+                If ($null -ne $Credential) { $InvokeCommandSplat['Credential'] = $Credential }
+                Invoke-Command @InvokeCommandSplat | Select-Object * -ExcludeProperty RunspaceID
             }
         }
     }
