@@ -21,14 +21,14 @@ You are now able to manually provide your own credential to each cmdlet, or invo
 
 `BUG Fixes`:
 
-+ [Issue #2](https://github.com/matthewjdegarmo/PSIISHelper/issues/2)
++ [Issue #2](https://github.com/matthewjdegarmo/PSIISHelper/issues/2) - [@thefirstnoe1](https://github.com/thefirstnoe1)
   + Fixed function returning `True` when a `-ComputerName` contained a period (eg. FQDNs)
 
 `Closed Issues`:
 
-+ [Issue #2](https://github.com/matthewjdegarmo/PSIISHelper/issues/2)
++ [Issue #2](https://github.com/matthewjdegarmo/PSIISHelper/issues/2) - [@thefirstnoe1](https://github.com/thefirstnoe1)
   + Fixed function returning `True` when a `-ComputerName` contained a period (eg. FQDNs)
-+ [Issue #3](https://github.com/matthewjdegarmo/PSIISHelper/issues/3)
++ [Issue #3](https://github.com/matthewjdegarmo/PSIISHelper/issues/3) - [@thefirstnoe1](https://github.com/thefirstnoe1)
   + Cmdlets now accept credentials using `-Credential` or `New-PSIISSession`.
 
 ## v0.0.2
